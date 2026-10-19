@@ -137,7 +137,7 @@ void ResetPiece(Player *p)
 
 int main()
 {
-    const int sidebarWidth = 400; 
+    const int sidebarWidth = 400;
     InitWindow(COLS * CELL_SIZE + sidebarWidth, ROWS * CELL_SIZE, "Tetris Pro - unifp");
     SetTargetFPS(60);
 
@@ -188,7 +188,7 @@ int main()
         BeginDrawing();
         ClearBackground((Color){10, 10, 12, 255});
 
-        //绘制游戏区
+        // 绘制游戏区
         for (int i = 0; i <= COLS; i++)
             DrawLine(i * CELL_SIZE, 0, i * CELL_SIZE, GetScreenHeight(), Fade(GRAY, 0.1f));
         for (int r = 0; r < ROWS; r++)
@@ -200,7 +200,7 @@ int main()
                 if (player.type.matrix[r][c])
                     DrawFancyBlock(player.x + c, player.y + r, player.type.color, CELL_SIZE);
 
-        //绘制侧边栏 UI
+        // 绘制侧边栏 UI
         int uiX = COLS * CELL_SIZE + 30;
         DrawRectangle(COLS * CELL_SIZE, 0, sidebarWidth, GetScreenHeight(), (Color){25, 25, 30, 255});
 
