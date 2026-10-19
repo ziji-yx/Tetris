@@ -1,16 +1,16 @@
 {
-  // See https://go.microsoft.com/fwlink/?LinkId=733558
-  // for the documentation about the tasks.json format
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "gcc",
+      "label": "build Tetris",
       "type": "process",
       "command": "gcc",
       "args": [
-        "${file}",
-        "-o",
-        "${fileDirname}/${fileBasenameNoExtension}.exe",
+        "${workspaceFolder}/Tetris.demo.c",
+        "-std=c17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
         "-I",
         "C:\\raylib\\raylib\\src",
         "-L",
@@ -18,9 +18,15 @@
         "-lraylib",
         "-lopengl32",
         "-lgdi32",
-        "-lwinmm"
+        "-lwinmm",
+        "-o",
+        "${workspaceFolder}/Tetris.demo.exe"
       ],
-      "group": { "kind": "build", "isDefault": true }
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"]
     }
   ]
 }
